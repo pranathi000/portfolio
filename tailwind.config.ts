@@ -11,7 +11,7 @@ const config: Config = {
         soft:  "#535A69",
         faint: "#98A0AE",
         line:  "#DDE1E8",
-        acc:   "#2C3FE0", // electric cobalt — change this one value to restyle the accent
+        acc:   "#8B7FD4", // electric cobalt — change this one value to restyle the accent
       },
       fontFamily: {
         display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
