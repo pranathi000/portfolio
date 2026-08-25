@@ -12,7 +12,7 @@ body {
 }
 ::selection { background: #C8A2C8; color: #000000; }
 
-a { color: #5B3E8E; text-decoration: underline; text-underline-offset: 3px; }
+a { color: #1A3FA8; text-decoration: underline; text-underline-offset: 3px; }
 a:hover { opacity: 0.72; }
 
 @media (prefers-reduced-motion: reduce) {
