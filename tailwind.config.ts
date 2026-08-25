@@ -16,7 +16,7 @@ const config: Config = {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
-      maxWidth: { prose: "720px" },
+      maxWidth: { prose: "1400px" },
     },
   },
   plugins: [],
