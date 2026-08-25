@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <main className="mx-auto max-w-prose px-5">
+    <main className="w-full">
       <Header />
       <Articles />
       <Research />
