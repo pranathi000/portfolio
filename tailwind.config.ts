@@ -6,7 +6,8 @@ const config: Config = {
       colors: {
         bg:    "#F1EEF8", // lavender background
         ink:   "#000000", // black body text
-        link:  "#5B3E8E", // deep purple — legible link color (white would vanish on lavender)
+        link:  "#1A3FA8", // dark blue — links
+        lilac: "#9B6BA8", // deeper lilac — subheadings
         faint: "#5b5560",
         rule:  "rgba(0,0,0,0.14)",
         lilac: "#C8A2C8", // accent, used sparingly (e.g. tags, hover)
