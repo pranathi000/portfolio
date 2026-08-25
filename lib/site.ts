@@ -5,6 +5,7 @@ export const site = {
   url: "https://santhoshinipranathi.vercel.app",
   description:
     "AI/ML researcher and systems-focused engineer working on anomaly detection, federated learning, and GPU inference systems.",
+  quote: "Stay curious. Stay rigorous.",
 };
 
 export const links = {
