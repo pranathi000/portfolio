@@ -21,4 +21,10 @@ export default function Header() {
         <a href="#projects">Projects</a>
         <a href="#discoveries">Discoveries</a>
         <a href="#love">Things I love</a>
-        <a href="#ai-evolution">AI evolution
+        <a href="#ai-evolution">AI evolution</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+  );
+}
