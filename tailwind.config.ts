@@ -9,7 +9,7 @@ const config: Config = {
         link:  "#5B3E8E", // deep purple — legible link color (white would vanish on lavender)
         faint: "#5b5560",
         rule:  "rgba(0,0,0,0.14)",
-        lilac: "#C8A2C8", // accent, used sparingly (e.g. tags, hover)
+        lilac: "#7A4F87",
       },
       fontFamily: {
         hand: ["var(--font-hand)", "cursive"],
