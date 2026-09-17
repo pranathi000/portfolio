@@ -29,21 +29,38 @@ a:hover { opacity: 0.72; }
 
 .side-glow {
   position: fixed;
-  width: 280px;
-  height: 280px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(139, 90, 158, 0.32), transparent 70%);
-  filter: blur(45px);
   pointer-events: none;
   z-index: 0;
-  animation: float 11s ease-in-out infinite;
+  filter: blur(60px);
 }
-.side-glow.left { left: -90px; top: 12%; }
-.side-glow.right { right: -90px; top: 58%; animation-delay: -5.5s; }
+.side-glow.a {
+  width: 480px; height: 480px; left: -160px; top: 5%;
+  background: radial-gradient(circle, rgba(139, 90, 158, 0.5), transparent 70%);
+  animation: drift1 16s ease-in-out infinite;
+}
+.side-glow.b {
+  width: 420px; height: 420px; right: -140px; top: 40%;
+  background: radial-gradient(circle, rgba(200, 162, 200, 0.5), transparent 70%);
+  animation: drift2 20s ease-in-out infinite;
+}
+.side-glow.c {
+  width: 360px; height: 360px; left: 10%; bottom: -120px;
+  background: radial-gradient(circle, rgba(91, 62, 142, 0.4), transparent 70%);
+  animation: drift3 18s ease-in-out infinite;
+}
 
-@keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(36px) scale(1.08); }
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(120px, 90px) scale(1.15); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-100px, -70px) scale(1.1); }
+}
+@keyframes drift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(80px, -60px) scale(1.2); }
 }
 
 @media (max-width: 900px) {
