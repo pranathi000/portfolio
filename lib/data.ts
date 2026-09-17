@@ -17,19 +17,20 @@ export type CurrentWorkItem = {
 
 export const currentWork: CurrentWorkItem[] = [
   {
-    emoji: "🌍",
-    title: "Aya Expedition — Multicultural Riddles Benchmark",
-    period: "Cohere Labs · July – August 2026",
-    desc: "Explored how language models handle culturally grounded riddles through human evaluation. Contributed Telugu evaluations and helped coordinate the Kannada evaluation effort across a benchmark spanning 61 cultures and 51 languages.",
-    link: "https://openreview.net/forum?id=sjdqmzc5B5",
-  },
-  {
     emoji: "🧩",
     title: "Multimodal Group",
     period: "Cohere Labs Open Science Community · September 2026 – Present",
     desc: "Helping shape the community’s multimodal research space through reading groups, research discussions, paper sessions, and collaborative projects around multimodal AI.",
     link: "https://labscommunity.cohere.com/community-programs/multimodal",
   },
+  {
+    emoji: "🌍",
+    title: "Aya Expedition — Multicultural Riddles Benchmark",
+    period: "Cohere Labs · July – August 2026",
+    desc: "Explored how language models handle culturally grounded riddles through human evaluation. Contributed Telugu evaluations and helped coordinate the Kannada evaluation effort across a benchmark spanning 61 cultures and 51 languages.",
+    link: "https://openreview.net/forum?id=sjdqmzc5B5",
+  },
+  
 ];
 
 // Your own research, projects, and technical work — things you built
@@ -37,19 +38,20 @@ export const currentWork: CurrentWorkItem[] = [
 // people's work you're recommending.
 export type Work = { emoji: string; title: string; tag: string; desc: string; link: string };
 export const research: Work[] = [
-  {
-  emoji: "📄",
-  title: "FedPAE - A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
-  tag: "ICTIS (THAILAND) 2026 · Presented · Accepted for Publication",
-  desc: "A privacy-preserving federated personalized autoencoder framework for distributed cloud systems, designed to improve anomaly detection while keeping client data decentralized.",
-  link: "",
-  },
+  
   {
     emoji: "📄",
     title: "MAD-EBA — A Detector-Agnostic Behavioral Anomaly Detection Framework for Smart Cloud Systems",
     tag: "Published . IEEE SMARTCOMP (ITALY)",
     desc: "A detector-agnostic framework for behavioral anomaly detection, evaluated across Isolation Forest and autoencoder-based models over thousands of entity-period profiles.",
     link: "https://ieeexplore.ieee.org/abstract/document/11627584",
+  },
+  {
+  emoji: "📄",
+  title: "FedPAE - A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
+  tag: "ICTIS (THAILAND) 2026 · Presented · Accepted for Publication",
+  desc: "A privacy-preserving federated personalized autoencoder framework for distributed cloud systems, designed to improve anomaly detection while keeping client data decentralized.",
+  link: "https://drive.google.com/file/d/1xIRU0XBV3qiwLgAX6t-2dmBHgGOGQJHe/view?usp=sharing",
   },
 ];
 
