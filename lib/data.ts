@@ -5,7 +5,25 @@
 // Leave a link as "" (empty string) as a placeholder until you have it;
 // the site shows nothing broken, just no link yet.
 // ─────────────────────────────────────────────────────────────────────────
-
+// "Current work" — ongoing contributions and collaborations, distinct
+// from your own authored research/projects above.
+export type CurrentWorkItem = { emoji: string; title: string; period: string; desc: string; link: string };
+export const currentWork: CurrentWorkItem[] = [
+  {
+    emoji: "🌍",
+    title: "Aya Expedition — Multicultural Riddles Benchmark, Cohere Labs",
+    period: "July – August 2026",
+    desc: "Contributed to Telugu human evaluations, and contributed to and coordinated Kannada human evaluations, for MultiCulturalRiddle: A Multicultural Benchmark of Riddles — a benchmark of culturally-grounded riddles spanning 61 cultures and 51 languages, evaluated on 24 LLMs.",
+    link: "https://openreview.net/forum?id=sjdqmzc5B5",
+  },
+  {
+    emoji: "🧩",
+    title: "Co-Lead, Multimodal Group — Cohere Labs Open Science Community",
+    period: "September 2026 – Present",
+    desc: "Helping run reading groups, organize research discussions, and coordinate multimodal research projects within the community.",
+    link: "https://labscommunity.cohere.com/community-programs/multimodal",
+  },
+];
 // Your own written pieces. `preview` is the short teaser shown on the
 // homepage (article stays "half visible" — full text lives in the PDF).
 // `pdf` should point to a file in /public (e.g. "/articles/my-piece.pdf").
