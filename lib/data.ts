@@ -13,19 +13,51 @@ export type Article = { emoji: string; title: string; date: string; preview: str
 export const articles: Article[] = [
   {
     emoji: "🧠",
-    title: "Lorem ipsum dolor sit amet",
-    date: "2026-08-24",
+    title: "Understanding PPO Better: The Intuition Behind Policy, Value, and Reward",
+    date: "01-07-2026",
     preview:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua…",
-    pdf: "",
+      "PPO became much easier to understand once I stopped treating its policy, value network, and reward model as isolated pieces. This article walks through how they interact, using a simple four-color example to build the intuition behind advantage, updates, and PPO’s clipping mechanism.",
+    pdf: "https://medium.com/@singarajupranathi/understanding-ppo-better-the-intuition-behind-policy-value-and-reward-9add03dbbcf4?sharedUserId=singarajupranathi",
   },
   {
-    emoji: "⚙️",
-    title: "Consectetur adipiscing elit",
-    date: "2026-07-02",
+    emoji: "🧠",
+    title: "The Adam Optimizer Finally Made Sense !",
+    date: "30-06-2026",
     preview:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat…",
-    pdf: "",
+      "Breaking down Adam beyond the equations - understanding how momentum, adaptive learning rates, and gradient updates work together, and why the optimizer behaves the way it does in practice.",
+    pdf: "https://medium.com/ai-in-plain-english/the-adam-optimizer-finally-made-sense-63a9e045aa12?sharedUserId=singarajupranathi",
+  },
+  {
+    emoji: "🧠",
+    title: "Understanding CUDA Register Pressure” Through a Series of Failed Experiments",
+    date: "25-04-2026",
+    preview:
+      "Trying to understand CUDA register pressure by breaking things first - exploring how register usage affects occupancy and performance, and what the failed experiments revealed along the way.",
+    pdf: "https://medium.com/@singarajupranathi/understanding-cuda-register-pressure-through-a-series-of-failed-experiments-f25338b4e807?sharedUserId=singarajupranathi",
+  },
+  {
+    emoji: "🧠",
+    title: "“Understanding CUDA Register Spilling: From Kernel Experiments to Hopper and Blackwell Architectures",
+    date: "27-04-2026",
+    preview:
+      "Wrote it to answer every question that naturally appears when trying to understand CUDA register spilling from the ground up. Not just what spilling is, but when it appears, how modern kernels manage it, and why it still matters even on recent GPU architectures like Hopper and Blackwell.",
+    pdf: "https://medium.com/@singarajupranathi/this-article-is-intentionally-long-c2108e7a0ecc?sharedUserId=singarajupranathi",
+  },
+  {
+    emoji: "🧠",
+    title: "Naive GEMM Is Not the First CUDA Kernel You Optimize",
+    date: "27-04-2026",
+    preview:
+      "A practical look at why optimizing a CUDA kernel starts with understanding the computation and its bottlenecks - using GEMM to explore memory access, tiling, and the decisions that actually matter for GPU performance.",
+    pdf: "https://medium.com/@singarajupranathi/naive-gemm-is-not-the-first-cuda-kernel-you-optimize-54891db774a3?sharedUserId=singarajupranathi",
+  },
+  {
+    emoji: "🧠",
+    title: "Naive GEMM Is Not the First CUDA Kernel You Optimize",
+    date: "27-04-2026",
+    preview:
+      "A practical look at why optimizing a CUDA kernel starts with understanding the computation and its bottlenecks - using GEMM to explore memory access, tiling, and the decisions that actually matter for GPU performance.",
+    pdf: "https://medium.com/@singarajupranathi/naive-gemm-is-not-the-first-cuda-kernel-you-optimize-54891db774a3?sharedUserId=singarajupranathi",
   },
 ];
 
