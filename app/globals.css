@@ -27,48 +27,78 @@ a:hover { opacity: 0.72; }
   }
 }
 
-.side-glow {
+/* ── 3D dark violet orbs ───────────────────────────────────────── */
+.orb {
   position: fixed;
-  border-radius: 9999px;
+  border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  filter: blur(60px);
-}
-.side-glow.a {
-  width: 480px; height: 480px; left: -160px; top: 5%;
-  background: radial-gradient(circle, rgba(139, 90, 158, 0.5), transparent 70%);
-  animation: drift1 16s ease-in-out infinite;
-}
-.side-glow.b {
-  width: 420px; height: 420px; right: -140px; top: 40%;
-  background: radial-gradient(circle, rgba(200, 162, 200, 0.5), transparent 70%);
-  animation: drift2 20s ease-in-out infinite;
-}
-.side-glow.c {
-  width: 360px; height: 360px; left: 10%; bottom: -120px;
-  background: radial-gradient(circle, rgba(91, 62, 142, 0.4), transparent 70%);
-  animation: drift3 18s ease-in-out infinite;
+  /* offset highlight + deep core + dark rim = glossy sphere lighting */
+  background: radial-gradient(
+    circle at 30% 26%,
+    #B592C4 0%,
+    #8B5A9E 22%,
+    #5B3E8E 48%,
+    #2E1F4D 75%,
+    #150A28 100%
+  );
+  /* inner shading carves out roundness; outer shadow makes it float; soft ring fakes reflected light */
+  box-shadow:
+    inset -14px -14px 30px rgba(0, 0, 0, 0.55),
+    inset 6px 6px 14px rgba(255, 255, 255, 0.15),
+    0 25px 45px -10px rgba(20, 5, 40, 0.55),
+    0 0 60px rgba(139, 90, 158, 0.35);
+  opacity: 0.92;
 }
 
-@keyframes drift1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(120px, 90px) scale(1.15); }
+/* soft reflection puddle beneath each ball */
+.orb::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: -18%;
+  height: 30%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(91, 62, 142, 0.35), transparent 70%);
+  filter: blur(6px);
 }
-@keyframes drift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-100px, -70px) scale(1.1); }
+
+.orb.o1 { width: 220px; height: 220px; top: 8%;   left: 5%;    animation: orbit1 24s ease-in-out infinite; }
+.orb.o2 { width: 90px;  height: 90px;  top: 65%;  left: 12%;   animation: orbit2 18s ease-in-out infinite; }
+.orb.o3 { width: 140px; height: 140px; top: 20%;  right: 8%;   animation: orbit3 21s ease-in-out infinite; }
+.orb.o4 { width: 60px;  height: 60px;  top: 75%;  right: 15%;  animation: orbit4 15s ease-in-out infinite; }
+.orb.o5 { width: 170px; height: 170px; top: 45%;  left: -60px; animation: orbit5 27s ease-in-out infinite; }
+.orb.o6 { width: 100px; height: 100px; top: 88%;  right: 30%;  animation: orbit6 19s ease-in-out infinite; }
+
+@keyframes orbit1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(60px, 90px) rotate(25deg); }
 }
-@keyframes drift3 {
+@keyframes orbit2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(40px, -70px); }
+}
+@keyframes orbit3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-70px, 60px); }
+}
+@keyframes orbit4 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(80px, -60px) scale(1.2); }
+  50% { transform: translate(-40px, -50px) scale(1.15); }
+}
+@keyframes orbit5 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(90px, 40px); }
+}
+@keyframes orbit6 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -30px) scale(0.9); }
 }
 
 @media (max-width: 900px) {
-  .side-glow { display: none; }
+  .orb { display: none; }
 }
-
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .side-glow { animation: none; }
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  .orb { animation: none; }
 }
