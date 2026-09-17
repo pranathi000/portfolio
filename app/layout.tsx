@@ -28,9 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${hand.variable} ${sans.variable} ${mono.variable}`}>
       <body className="font-sans antialiased relative">
-        <div className="side-glow a" aria-hidden />
-        <div className="side-glow b" aria-hidden />
-        <div className="side-glow c" aria-hidden />
+        <div className="orb o1" aria-hidden />
+        <div className="orb o2" aria-hidden />
+        <div className="orb o3" aria-hidden />
+        <div className="orb o4" aria-hidden />
+        <div className="orb o5" aria-hidden />
+        <div className="orb o6" aria-hidden />
         <div className="relative z-10">{children}</div>
       </body>
     </html>
