@@ -163,31 +163,31 @@ export const projects: Work[] = [
 // Discoveries: things made by OTHER people that you're recommending —
 // papers, articles, sites, tools, artwork, music, books, anything.
 // Always opens externally in a new tab. Not your own work.
-export type Discovery = { emoji: string; kind: string; title: string; desc: string; link: string; date: string };
+export type Discovery = {
+  emoji: string;
+  kind: string;
+  title: string;
+  desc: string;
+  link: string;
+  date: string;
+};
+
 export const discoveries: Discovery[] = [
   {
-    emoji: "📚",
-    kind: "Paper",
-    title: "Lorem ipsum dolor sit amet, consectetur",
-    desc: "Short description of why I like or recommend it.",
-    link: "",
-    date: "2026-08-10",
+    emoji: "✍️",
+    kind: "Essay",
+    title: "The Substack Post I Had to Share",
+    desc: "Came across this and immediately thought it was worth passing along. One of those reads that stays with you for a while.",
+    link: "https://substack.com/home/post/p-215793178",
+    date: "2026-09-17",
   },
   {
-    emoji: "📖",
-    kind: "Book",
-    title: "Ut enim ad minim veniam quis nostrud",
-    desc: "Short description of why I like or recommend it.",
-    link: "",
-    date: "2026-06-28",
-  },
-  {
-    emoji: "🌐",
-    kind: "Website",
-    title: "Duis aute irure dolor in reprehenderit",
-    desc: "Short description of why I like or recommend it.",
-    link: "",
-    date: "2026-04-14",
+    emoji: "🧠",
+    kind: "Article",
+    title: "Exploring Qwen: Alibaba's Advanced Language Model Architecture",
+    desc: "A good rabbit hole into Qwen — its different generations, architectural choices, multilingual focus, and how the pieces have evolved over time.",
+    link: "https://galileo.ai/blog/qwen-ai-models",
+    date: "2026-09-18",
   },
 ];
 
