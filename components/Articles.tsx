@@ -3,7 +3,7 @@ import { articles } from "@/lib/data";
 
 export default function Articles() {
   return (
-    <Section id="articles" title="Articles" sub="What I've written myself. Each one opens as a PDF you can read in the browser or download.">
+    <Section id="articles" title="Articles" sub="Dump of AI. ML. Inference Engineering. CUDA. Research. Whatever I’m digging into!">
       <div>
         {articles.map((a) => (
           <div key={a.title} className="mb-7 last:mb-0">
