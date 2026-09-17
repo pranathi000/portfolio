@@ -12,7 +12,14 @@ export const metadata: Metadata = {
   title: { default: site.name, template: `%s — ${site.name}` },
   description: site.description,
   alternates: { canonical: "/" },
-  openGraph: { type: "website", url: site.url, title: site.name, description: site.description, siteName: site.name, locale: "en_US" },
+  openGraph: {
+    type: "website",
+    url: site.url,
+    title: site.name,
+    description: site.description,
+    siteName: site.name,
+    locale: "en_US",
+  },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.svg" },
 };
@@ -21,8 +28,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${hand.variable} ${sans.variable} ${mono.variable}`}>
       <body className="font-sans antialiased relative">
-        <div className="side-glow left" aria-hidden />
-        <div className="side-glow right" aria-hidden />
+        <div className="side-glow a" aria-hidden />
+        <div className="side-glow b" aria-hidden />
+        <div className="side-glow c" aria-hidden />
         <div className="relative z-10">{children}</div>
       </body>
     </html>
