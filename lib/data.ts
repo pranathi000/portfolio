@@ -53,10 +53,10 @@ export const articles: Article[] = [
   },
   {
     emoji: "🧠",
-    title: "Naive GEMM Is Not the First CUDA Kernel You Optimize",
-    date: "27-04-2026",
+    title: "CUDA Programming: What Happens When You Give Your Computer 10,000 Workers Instead of 4",
+    date: "02-8-2025",
     preview:
-      "A practical look at why optimizing a CUDA kernel starts with understanding the computation and its bottlenecks - using GEMM to explore memory access, tiling, and the decisions that actually matter for GPU performance.",
+      "An introduction to CUDA’s parallel execution model, exploring how threads, blocks, and warps work together to enable massively parallel computation on GPUs.",
     pdf: "https://medium.com/@singarajupranathi/naive-gemm-is-not-the-first-cuda-kernel-you-optimize-54891db774a3?sharedUserId=singarajupranathi",
   },
 ];
@@ -67,56 +67,65 @@ export const articles: Article[] = [
 export type Work = { emoji: string; title: string; tag: string; desc: string; link: string };
 export const research: Work[] = [
   {
-    emoji: "📄",
-    title: "FedPAE — A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
-    tag: "ICTIS 2026 · Published",
-    desc: "A federated personalized autoencoder for distributed cloud systems, achieving higher anomaly-detection performance than FedAvg and FedProx baselines without centralizing client data.",
-    link: "",
+  emoji: "📄",
+  title: "FedPAE - A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
+  tag: "ICTIS (THAILAND) 2026 · Presented · Accepted for Publication",
+  desc: "A privacy-preserving federated personalized autoencoder framework for distributed cloud systems, designed to improve anomaly detection while keeping client data decentralized.",
+  link: "",
   },
   {
     emoji: "📄",
     title: "MAD-EBA — A Detector-Agnostic Behavioral Anomaly Detection Framework for Smart Cloud Systems",
-    tag: "Poster · Accepted",
+    tag: "Published . IEEE SMARTCOMP (ITALY)",
     desc: "A detector-agnostic framework for behavioral anomaly detection, evaluated across Isolation Forest and autoencoder-based models over thousands of entity-period profiles.",
-    link: "",
+    link: "https://ieeexplore.ieee.org/abstract/document/11627584",
   },
 ];
 
 export const projects: Work[] = [
   {
     emoji: "🖥️",
-    title: "End-to-End Transformer Attention Inference — Cross-Layer CUDA Study",
-    tag: "CUDA · Triton · CUTLASS",
-    desc: "A cross-implementation study of attention kernels, comparing shared-memory tiling and warp-level tuning against reference libraries.",
-    link: "",
+    title: "Mini-STARK: A Stateful Environment for Evaluating AI Agents",
+    tag: "LangGraph · Python · May 2026 – Present",
+    desc: "Built a 3-layer verification system to catch agent failures invisible to output-level checks, discovering environment state and conversational memory are architecturally separate systems.",
+    link: "https://github.com/pranathi000/RLHF/tree/main/MINI-STARK",
   },
+
+  {
+    emoji: "🖥️",
+    title: "Complete RLHF Pipeline: SFT, Reward Modeling, GRPO and DPO on UltraFeedback",
+    tag: "PyTorch · HuggingFace TRL · GPT-2 · Feb 2026 – Apr 2026",
+    desc: "Trained a reward model from scratch on 35K preference pairs achieving 56.5% accuracy and ran GRPO/DPO, finding that removing KL penalty destabilizes training rather than just causing reward hacking.",
+    link: "https://github.com/pranathi000/RLHF/tree/main/Complete%20RLHF%20pipeline",
+  },
+
   {
     emoji: "🖥️",
     title: "Minimal Transformer Inference Engine — KV-Cache, Continuous Batching, Streaming",
     tag: "CUDA · PyTorch",
     desc: "A from-scratch serving engine with KV-cache reuse and a continuous-batching scheduler, with streaming token output.",
-    link: "",
+    link: "https://github.com/pranathi000/cuda_and_inference_engineering/tree/main/transformer%20inference%20engine",
   },
   {
     emoji: "🖥️",
     title: "Memory-Efficient Long-Context Attention — Paged KV-Cache + IO-Aware FlashAttention",
     tag: "CUDA · FlashAttention",
     desc: "FlashAttention-style tiled attention with paged KV-cache allocation, scaling inference to very long sequences.",
-    link: "",
+    link: "https://github.com/pranathi000/long-context-flashattention",
   },
   {
-    emoji: "🩺",
+    emoji: "🖥️",
     title: "Autism Detection & Screening Assessment",
     tag: "ML · Streamlit",
     desc: "A real-time screening tool served through a Streamlit interface, comparing several classifiers.",
     link: "https://github.com/pranathi000/autism",
   },
   {
-    emoji: "🌅",
+    emoji: "🖥️",
     title: "3D Graphics Engine — Ray Tracing",
     tag: "Graphics",
     desc: "Shading, anti-aliasing, super-sampling, and real-time rendering, written from scratch.",
-    link: "",
+    link: "https://github.com/pranathi000/ray-tracer",
   },
 ];
 
