@@ -1,4 +1,3 @@
-```tsx
 import Section from "./Section";
 import { currentWork } from "@/lib/data";
 
@@ -22,7 +21,7 @@ export default function CurrentWork() {
 
             <div className="text-xl font-semibold mb-3">
               {c.link ? (
-                <a
+                
                   href={c.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -43,4 +42,3 @@ export default function CurrentWork() {
     </Section>
   );
 }
-```
