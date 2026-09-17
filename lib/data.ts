@@ -7,20 +7,27 @@
 // ─────────────────────────────────────────────────────────────────────────
 // "Current work" — ongoing contributions and collaborations, distinct
 // from your own authored research/projects above.
-export type CurrentWorkItem = { emoji: string; title: string; period: string; desc: string; link: string };
+export type CurrentWorkItem = {
+  emoji: string;
+  title: string;
+  period: string;
+  desc: string;
+  link: string;
+};
+
 export const currentWork: CurrentWorkItem[] = [
   {
     emoji: "🌍",
-    title: "Aya Expedition — Multicultural Riddles Benchmark, Cohere Labs",
-    period: "July – August 2026",
-    desc: "Contributed to Telugu human evaluations, and contributed to and coordinated Kannada human evaluations, for MultiCulturalRiddle: A Multicultural Benchmark of Riddles — a benchmark of culturally-grounded riddles spanning 61 cultures and 51 languages, evaluated on 24 LLMs.",
+    title: "Aya Expedition — Multicultural Riddles Benchmark",
+    period: "Cohere Labs · July – August 2026",
+    desc: "Explored how language models handle culturally grounded riddles through human evaluation. Contributed Telugu evaluations and helped coordinate the Kannada evaluation effort across a benchmark spanning 61 cultures and 51 languages.",
     link: "https://openreview.net/forum?id=sjdqmzc5B5",
   },
   {
     emoji: "🧩",
-    title: "Co-Lead, Multimodal Group — Cohere Labs Open Science Community",
-    period: "September 2026 – Present",
-    desc: "Helping run reading groups, organize research discussions, and coordinate multimodal research projects within the community.",
+    title: "Multimodal Group",
+    period: "Cohere Labs Open Science Community · September 2026 – Present",
+    desc: "Helping shape the community’s multimodal research space through reading groups, research discussions, paper sessions, and collaborative projects around multimodal AI.",
     link: "https://labscommunity.cohere.com/community-programs/multimodal",
   },
 ];
