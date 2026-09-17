@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import CurrentWork from "@/components/CurrentWork";
 import Articles from "@/components/Articles";
 import Research from "@/components/Research";
 import Projects from "@/components/Projects";
@@ -13,6 +14,7 @@ export default function Page() {
   return (
     <main className="w-full pl-5">
       <Header />
+      <CurrentWork />
       <Articles />
       <Research />
       <Projects />
