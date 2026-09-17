@@ -5,8 +5,8 @@ export default function CurrentWork() {
   return (
     <Section
       id="current-work"
-      title="What I’m Involved In"
-      sub="Some of the research communities, projects, and questions I’m currently spending time with."
+      title="What I&apos;m Involved In"
+      sub="Some of the research communities, projects, and questions I&apos;m currently spending time with."
       centered
     >
       <div className="text-center">
@@ -21,11 +21,7 @@ export default function CurrentWork() {
 
             <div className="text-xl font-semibold mb-3">
               {c.link ? (
-                
-                  href={c.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={c.link} target="_blank" rel="noopener noreferrer">
                   {c.title}
                 </a>
               ) : (
