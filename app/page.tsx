@@ -14,8 +14,8 @@ export default function Page() {
     <main className="w-full pl-5">
       <Header />
       <CurrentWork />
-      <Articles />
       <Research />
+      <Articles />
       <Projects />
       <Discoveries />
       <ThingsILove />
