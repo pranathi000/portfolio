@@ -5,12 +5,12 @@ import { links } from "@/lib/site";
 export default function Articles() {
   return (
     <Section id="articles" title="Articles" sub="Dump of AI. ML. Inference Engineering. CUDA. Research. Whatever I’m digging into!">
-      <div>
+      <div className="text-center">
         {articles.map((a) => (
-          <div key={a.title} className="mb-7 last:mb-0">
-            <div className="font-mono text-[0.78rem] text-faint mb-1">{a.emoji} {a.date}</div>
-            <div className="font-medium">{a.title}</div>
-            <p className="max-w-prose mt-1 mb-2">{a.preview}</p>
+          <div key={a.title} className="mb-10 pb-10 border-b border-rule last:border-0 last:mb-0 last:pb-0">
+            <div className="font-mono text-[0.78rem] text-faint mb-2">{a.emoji} {a.date}</div>
+            <div className="text-xl font-semibold mb-3">{a.title}</div>
+            <p className="max-w-prose mb-3">{a.preview}</p>
             {a.pdf ? (
               <a href={a.pdf} target="_blank" rel="noopener">Read →</a>
             ) : (
