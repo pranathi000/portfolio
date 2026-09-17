@@ -31,6 +31,29 @@ export const currentWork: CurrentWorkItem[] = [
     link: "https://labscommunity.cohere.com/community-programs/multimodal",
   },
 ];
+
+// Your own research, projects, and technical work — things you built
+// or authored. Distinct from "discoveries" below, which are other
+// people's work you're recommending.
+export type Work = { emoji: string; title: string; tag: string; desc: string; link: string };
+export const research: Work[] = [
+  {
+  emoji: "📄",
+  title: "FedPAE - A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
+  tag: "ICTIS (THAILAND) 2026 · Presented · Accepted for Publication",
+  desc: "A privacy-preserving federated personalized autoencoder framework for distributed cloud systems, designed to improve anomaly detection while keeping client data decentralized.",
+  link: "",
+  },
+  {
+    emoji: "📄",
+    title: "MAD-EBA — A Detector-Agnostic Behavioral Anomaly Detection Framework for Smart Cloud Systems",
+    tag: "Published . IEEE SMARTCOMP (ITALY)",
+    desc: "A detector-agnostic framework for behavioral anomaly detection, evaluated across Isolation Forest and autoencoder-based models over thousands of entity-period profiles.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11627584",
+  },
+];
+
+
 // Your own written pieces. `preview` is the short teaser shown on the
 // homepage (article stays "half visible" — full text lives in the PDF).
 // `pdf` should point to a file in /public (e.g. "/articles/my-piece.pdf").
@@ -86,26 +109,7 @@ export const articles: Article[] = [
   },
 ];
 
-// Your own research, projects, and technical work — things you built
-// or authored. Distinct from "discoveries" below, which are other
-// people's work you're recommending.
-export type Work = { emoji: string; title: string; tag: string; desc: string; link: string };
-export const research: Work[] = [
-  {
-  emoji: "📄",
-  title: "FedPAE - A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
-  tag: "ICTIS (THAILAND) 2026 · Presented · Accepted for Publication",
-  desc: "A privacy-preserving federated personalized autoencoder framework for distributed cloud systems, designed to improve anomaly detection while keeping client data decentralized.",
-  link: "",
-  },
-  {
-    emoji: "📄",
-    title: "MAD-EBA — A Detector-Agnostic Behavioral Anomaly Detection Framework for Smart Cloud Systems",
-    tag: "Published . IEEE SMARTCOMP (ITALY)",
-    desc: "A detector-agnostic framework for behavioral anomaly detection, evaluated across Isolation Forest and autoencoder-based models over thousands of entity-period profiles.",
-    link: "https://ieeexplore.ieee.org/abstract/document/11627584",
-  },
-];
+
 
 export const projects: Work[] = [
   {
