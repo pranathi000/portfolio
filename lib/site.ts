@@ -13,7 +13,7 @@ export const links = {
   github: "https://github.com/pranathi000",
   linkedin: "https://www.linkedin.com/in/santhoshini-pranathi-5b61b3258/",
   huggingface: "https://huggingface.co/Santhoshini/spaces", // add your Hugging Face profile URL here
-  ["💬", "D", links.discord],
+  discord: "pranathi000",
   medium: "https://medium.com/@singarajupranathi",
   GoogleScholar: "https://scholar.google.com/citations?user=nAnQ6QoAAAAJ&hl=en&oi=ao",     // falls back to papers folder until filled in
   papers: "https://drive.google.com/drive/folders/15ivOpdjCAhuZS4C_9jHlxCweiltgErbD",
