@@ -15,18 +15,43 @@ body {
 a { color: #1A3FA8; text-decoration: underline; text-underline-offset: 3px; }
 a:hover { opacity: 0.72; }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+@layer utilities {
+  .script-bold {
+    text-shadow:
+      0.6px 0 currentColor,
+      -0.6px 0 currentColor,
+      0 0.6px currentColor,
+      0 -0.6px currentColor,
+      0.6px 0.6px currentColor,
+      -0.6px -0.6px currentColor;
+  }
 }
 
-import Section from "./Section";
-import WorkList from "./WorkList";
-import { research } from "@/lib/data";
-export default function Research() {
-  return (
-    <Section id="research" title="Research" sub="My own research work." centered>
-      <WorkList items={research} centered />
-    </Section>
-  );
+.side-glow {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(139, 90, 158, 0.32), transparent 70%);
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float 11s ease-in-out infinite;
+}
+.side-glow.left { left: -90px; top: 12%; }
+.side-glow.right { right: -90px; top: 58%; animation-delay: -5.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(36px) scale(1.08); }
+}
+
+@media (max-width: 900px) {
+  .side-glow { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .side-glow { animation: none; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
