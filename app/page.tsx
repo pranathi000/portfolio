@@ -7,7 +7,6 @@ import Discoveries from "@/components/Discoveries";
 import ThingsILove from "@/components/ThingsILove";
 import AIEvolution from "@/components/AIEvolution";
 import About from "@/components/About";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Page() {
@@ -22,7 +21,6 @@ export default function Page() {
       <ThingsILove />
       <AIEvolution />
       <About />
-      <Contact />
       <Footer />
     </main>
   );
