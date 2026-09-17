@@ -27,73 +27,75 @@ a:hover { opacity: 0.72; }
   }
 }
 
-/* ── 3D dark violet orbs ───────────────────────────────────────── */
+/* ── 3D violet orbs — edge-only, translucent, reflective ─────────── */
 .orb {
   position: fixed;
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  /* offset highlight + deep core + dark rim = glossy sphere lighting */
+  mix-blend-mode: multiply;     /* lets text/background show through instead of being covered */
   background: radial-gradient(
     circle at 30% 26%,
-    #B592C4 0%,
-    #8B5A9E 22%,
-    #5B3E8E 48%,
-    #2E1F4D 75%,
-    #150A28 100%
+    #D6C2E0 0%,
+    #B592C4 25%,
+    #8B6BA8 52%,
+    #6B4E8E 78%,
+    #4A3566 100%
   );
-  /* inner shading carves out roundness; outer shadow makes it float; soft ring fakes reflected light */
   box-shadow:
-    inset -14px -14px 30px rgba(0, 0, 0, 0.55),
-    inset 6px 6px 14px rgba(255, 255, 255, 0.15),
-    0 25px 45px -10px rgba(20, 5, 40, 0.55),
-    0 0 60px rgba(139, 90, 158, 0.35);
-  opacity: 0.92;
+    inset -10px -10px 24px rgba(0, 0, 0, 0.25),
+    inset 6px 6px 14px rgba(255, 255, 255, 0.35),
+    0 20px 35px -12px rgba(80, 50, 110, 0.35);
+  opacity: 0.45;
 }
 
-/* soft reflection puddle beneath each ball */
 .orb::after {
   content: "";
   position: absolute;
-  left: 12%;
-  right: 12%;
-  bottom: -18%;
-  height: 30%;
+  left: 15%;
+  right: 15%;
+  bottom: -16%;
+  height: 26%;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(91, 62, 142, 0.35), transparent 70%);
+  background: radial-gradient(ellipse, rgba(139, 107, 168, 0.25), transparent 70%);
   filter: blur(6px);
 }
 
-.orb.o1 { width: 220px; height: 220px; top: 8%;   left: 5%;    animation: orbit1 24s ease-in-out infinite; }
-.orb.o2 { width: 90px;  height: 90px;  top: 65%;  left: 12%;   animation: orbit2 18s ease-in-out infinite; }
-.orb.o3 { width: 140px; height: 140px; top: 20%;  right: 8%;   animation: orbit3 21s ease-in-out infinite; }
-.orb.o4 { width: 60px;  height: 60px;  top: 75%;  right: 15%;  animation: orbit4 15s ease-in-out infinite; }
-.orb.o5 { width: 170px; height: 170px; top: 45%;  left: -60px; animation: orbit5 27s ease-in-out infinite; }
-.orb.o6 { width: 100px; height: 100px; top: 88%;  right: 30%;  animation: orbit6 19s ease-in-out infinite; }
+/* every orb sits in the outer margin; travel range stays within that margin */
+.orb.o1 { width: 220px; height: 220px; top: 6%;   left: -40px;  animation: edge1 24s ease-in-out infinite; }
+.orb.o2 { width: 90px;  height: 90px;  top: 62%;  left: 2%;     animation: edge2 18s ease-in-out infinite; }
+.orb.o3 { width: 140px; height: 140px; top: 18%;  right: -30px; animation: edge3 21s ease-in-out infinite, pulse 6s ease-in-out infinite; }
+.orb.o4 { width: 60px;  height: 60px;  top: 78%;  right: 4%;    animation: edge4 15s ease-in-out infinite; }
+.orb.o5 { width: 170px; height: 170px; top: 42%;  left: -90px;  animation: edge5 27s ease-in-out infinite; }
+.orb.o6 { width: 100px; height: 100px; top: 86%;  right: 6%;    animation: edge6 19s ease-in-out infinite, pulse 8s ease-in-out infinite 2s; }
 
-@keyframes orbit1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(60px, 90px) rotate(25deg); }
-}
-@keyframes orbit2 {
+@keyframes edge1 {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(40px, -70px); }
+  50% { transform: translate(20px, 40px); }
 }
-@keyframes orbit3 {
+@keyframes edge2 {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-70px, 60px); }
+  50% { transform: translate(15px, -30px); }
 }
-@keyframes orbit4 {
+@keyframes edge3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 30px); }
+}
+@keyframes edge4 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-40px, -50px) scale(1.15); }
+  50% { transform: translate(-15px, -25px) scale(1.08); }
 }
-@keyframes orbit5 {
+@keyframes edge5 {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(90px, 40px); }
+  50% { transform: translate(30px, 20px); }
 }
-@keyframes orbit6 {
+@keyframes edge6 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(50px, -30px) scale(0.9); }
+  50% { transform: translate(18px, -15px) scale(0.92); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.25; }
 }
 
 @media (max-width: 900px) {
