@@ -163,3 +163,66 @@ a:hover { opacity: 0.72; }
 @media (prefers-reduced-motion: reduce) {
   .packet-node, .packet-trail { animation: none; opacity: 0; }
 }
+/* ── walking robot, replaces the section divider ─────────────────── */
+.robo-track {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.robo-walker {
+  position: absolute;
+  left: -40px;
+  top: 4px;
+  animation: robo-walk 2.4s linear;
+  animation-fill-mode: forwards;
+  transform-origin: center bottom;
+}
+
+@keyframes robo-walk {
+  0%   { left: -40px; opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* leg swing — the walk cycle */
+.robo-leg-l, .robo-leg-r {
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+.robo-leg-l { animation: leg-swing-a 0.4s ease-in-out infinite; }
+.robo-leg-r { animation: leg-swing-b 0.4s ease-in-out infinite; }
+
+@keyframes leg-swing-a {
+  0%, 100% { transform: rotate(18deg); }
+  50% { transform: rotate(-18deg); }
+}
+@keyframes leg-swing-b {
+  0%, 100% { transform: rotate(-18deg); }
+  50% { transform: rotate(18deg); }
+}
+
+/* arms swing opposite to legs, like a real walk */
+.robo-arm-l, .robo-arm-r {
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+.robo-arm-l { animation: leg-swing-b 0.4s ease-in-out infinite; }
+.robo-arm-r { animation: leg-swing-a 0.4s ease-in-out infinite; }
+
+/* gentle head/body bob while walking */
+.robo-walker { animation: robo-walk 2.4s linear, robo-bob 0.4s ease-in-out infinite; }
+
+@keyframes robo-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .robo-walker, .robo-leg-l, .robo-leg-r, .robo-arm-l, .robo-arm-r {
+    animation: none;
+  }
+}
