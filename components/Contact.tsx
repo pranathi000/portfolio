@@ -15,7 +15,7 @@ export default function Contact() {
       <p className="max-w-prose mx-auto mb-4">
         This site works simply: articles I write are shown as a short preview here, and open as a
         full PDF you can read or download. Discoveries, things I love, and the AI-evolution log are
-        my own curated notes, not claims of authorship — each says clearly what it is.
+        my own curated notes, not claims of authorship &mdash; each says clearly what it is.
       </p>
       <p className="max-w-prose mx-auto mb-6">
         If something here interests you, or you want to send me a paper, article, project, or idea
