@@ -104,3 +104,62 @@ a:hover { opacity: 0.72; }
 @media (prefers-reduced-motion: reduce) {
   .orb { animation: none; }
 }
+/* ── hopping packet with fading trail ─────────────────────────────── */
+.packet-track {
+  position: fixed;
+  bottom: 6%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.packet-node {
+  position: absolute;
+  left: -40px;
+  filter: drop-shadow(0 6px 10px rgba(74, 53, 102, 0.4));
+  animation: hop-path 26s linear infinite;
+}
+
+.packet-trail {
+  position: absolute;
+  left: -40px;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: radial-gradient(circle, #B592C4, transparent 70%);
+  opacity: 0;
+}
+.packet-trail.t1 { animation: hop-path 26s linear infinite, fade-trail 26s linear infinite; animation-delay: -0.15s, -0.15s; }
+.packet-trail.t2 { animation: hop-path 26s linear infinite, fade-trail 26s linear infinite; animation-delay: -0.3s, -0.3s; }
+.packet-trail.t3 { animation: hop-path 26s linear infinite, fade-trail 26s linear infinite; animation-delay: -0.45s, -0.45s; }
+
+/* travels left to right in a repeating arc — the "hop" comes from vertical bounce */
+@keyframes hop-path {
+  0%   { left: -40px; top: 40px; }
+  10%  { top: 0px; }
+  20%  { left: 12%; top: 40px; }
+  30%  { top: 0px; }
+  40%  { left: 24%; top: 40px; }
+  50%  { top: 0px; }
+  60%  { left: 40%; top: 40px; }
+  70%  { top: 0px; }
+  80%  { left: 60%; top: 40px; }
+  90%  { top: 0px; }
+  100% { left: 105%; top: 40px; }
+}
+
+@keyframes fade-trail {
+  0%   { opacity: 0; }
+  5%   { opacity: 0.5; }
+  15%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .packet-track { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .packet-node, .packet-trail { animation: none; opacity: 0; }
+}
