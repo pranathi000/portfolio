@@ -2,8 +2,9 @@
 import { useState } from "react";
 import { aiEvolutionNodes } from "@/lib/data";
 
-const CX = 260, CY = 220;
-const RX = 150, RY = 120;
+const CX = 300, CY = 240;
+const RX = 130, RY = 105;
+const VBW = 600, VBH = 480;
 
 function nodePos(angle: number) {
   const rad = (angle * Math.PI) / 180;
@@ -14,25 +15,24 @@ export default function AIBrainMap() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <svg viewBox="0 0 520 440" width="100%" style={{ maxWidth: 560 }} className="mx-auto block">
-      {/* simplified brain outline — a single soft, hand-drawn-feeling sketch shape */}
+    <svg viewBox={`0 0 ${VBW} ${VBH}`} width="100%" style={{ maxWidth: 640 }} className="mx-auto block">
       <path
-        d="M 260 90
-           C 190 90, 130 130, 120 190
-           C 112 230, 130 250, 115 280
-           C 100 310, 130 340, 170 345
-           C 190 370, 230 380, 265 365
-           C 310 380, 355 360, 370 320
-           C 400 315, 415 280, 400 250
-           C 415 220, 405 180, 375 155
-           C 365 115, 320 90, 260 90 Z"
+        d="M 300 110
+           C 230 110, 170 150, 160 210
+           C 152 250, 170 270, 155 300
+           C 140 330, 170 360, 210 365
+           C 230 390, 270 400, 305 385
+           C 350 400, 395 380, 410 340
+           C 440 335, 455 300, 440 270
+           C 455 240, 445 200, 415 175
+           C 405 135, 360 110, 300 110 Z"
         fill="none"
         stroke="#C8A2C8"
         strokeWidth="1.4"
         opacity="0.65"
       />
       <path
-        d="M 260 90 C 260 160, 260 260, 260 370"
+        d="M 300 110 C 300 180, 300 280, 300 390"
         fill="none"
         stroke="#C8A2C8"
         strokeWidth="1"
@@ -42,9 +42,9 @@ export default function AIBrainMap() {
       {aiEvolutionNodes.map((node, i) => {
         const { x, y } = nodePos(node.angle);
         const isActive = active === i;
-        // leader line target: pushed outward from the node, toward the label
-        const labelX = CX + (x - CX) * 1.75;
-        const labelY = CY + (y - CY) * 1.75;
+        const labelX = CX + (x - CX) * 1.42;
+        const labelY = CY + (y - CY) * 1.42;
+        const anchor = labelX < CX - 10 ? "end" : labelX > CX + 10 ? "start" : "middle";
         return (
           <g key={node.label} onMouseEnter={() => setActive(i)} onMouseLeave={() => setActive(null)} className="cursor-pointer">
             <line
@@ -58,10 +58,9 @@ export default function AIBrainMap() {
             <text
               x={labelX}
               y={labelY}
-              textAnchor={x < CX ? "end" : "start"}
-              dx={x < CX ? -6 : 6}
+              textAnchor={anchor}
               dy="4"
-              fontSize="12.5"
+              fontSize="13"
               fontWeight={isActive ? 600 : 400}
               fill={isActive ? "#2E1F4D" : "#4a4453"}
               style={{ transition: "font-weight 0.2s" }}
