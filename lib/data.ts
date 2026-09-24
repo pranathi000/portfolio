@@ -222,13 +222,72 @@ export const lovedWriting = [
   { title: "a Substack piece", note: "wrote this because apparently thinking about it wasn't enough.", link: "" },
 ];
 
-// AI Evolution: your own running, dated log of developments,
-// milestones, or shifts in AI that you find significant. Append freely.
-export type Milestone = { date: string; text: string };
-export const aiEvolution: Milestone[] = [
-  { date: "2026-06", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod." },
-  { date: "2026-02", text: "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris." },
-  { date: "2025-11", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse." },
+// AI Evolution — brain map. Each node is a category with a short list of
+// real papers/links that shaped it. To add a new paper, find its category
+// and add one object to that node's `items` array.
+export type EvolutionItem = { title: string; authors: string; link: string };
+export type EvolutionNode = {
+  label: string;
+  angle: number; // position around the brain, degrees, 0 = top
+  items: EvolutionItem[];
+};
+export const aiEvolutionNodes: EvolutionNode[] = [
+  {
+    label: "Representation & Learning",
+    angle: 15,
+    items: [
+      { title: "Attention Is All You Need", authors: "Vaswani et al., 2017", link: "https://arxiv.org/abs/1706.03762" },
+    ],
+  },
+  {
+    label: "Multimodal Models",
+    angle: 55,
+    items: [
+      { title: "Learning Transferable Visual Models From Natural Language Supervision (CLIP)", authors: "Radford et al., 2021", link: "https://arxiv.org/abs/2103.00020" },
+    ],
+  },
+  {
+    label: "Multilingual AI",
+    angle: 95,
+    items: [
+      { title: "MultiCulturalRiddle: A Multicultural Benchmark of Riddles", authors: "MRL 2026", link: "https://openreview.net/forum?id=sjdqmzc5B5" },
+    ],
+  },
+  {
+    label: "Reasoning & Agents",
+    angle: 140,
+    items: [
+      { title: "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control", authors: "Brohan et al., 2023", link: "https://arxiv.org/abs/2307.15818" },
+    ],
+  },
+  {
+    label: "Representation of the physical world",
+    angle: 185,
+    items: [
+      { title: "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning", authors: "Assran et al., 2025", link: "https://arxiv.org/abs/2506.09985" },
+    ],
+  },
+  {
+    label: "Model Efficiency",
+    angle: 230,
+    items: [
+      { title: "", authors: "", link: "" },
+    ],
+  },
+  {
+    label: "AI Safety",
+    angle: 275,
+    items: [
+      { title: "", authors: "", link: "" },
+    ],
+  },
+  {
+    label: "Hardware & Systems",
+    angle: 320,
+    items: [
+      { title: "", authors: "", link: "" },
+    ],
+  },
 ];
 
 // Education / certifications — folded quietly into About, not shown
