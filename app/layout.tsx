@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Zeyada, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/lib/site";
-import PacketHop from "@/components/PacketHop";
 import "./globals.css";
 
 const hand = Zeyada({ subsets: ["latin"], display: "swap", variable: "--font-hand", weight: "400" });
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="orb o4" aria-hidden />
         <div className="orb o5" aria-hidden />
         <div className="orb o6" aria-hidden />
-        <PacketHop />
         <div className="relative z-10">{children}</div>
       </body>
     </html>
