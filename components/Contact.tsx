@@ -2,28 +2,56 @@ import Section from "./Section";
 import { links } from "@/lib/site";
 
 const social = [
-  ["GitHub", links.github, links.github],
-  ["LinkedIn", links.linkedin, links.linkedin],
-  ["Hugging Face", links.huggingface, links.huggingface],
-  ["Discord", "pranathi000", ""],
-  ["Email", links.email, `mailto:${links.email}`],
+  ["GH", links.github],
+  ["in", links.linkedin],
+  ["HF", links.huggingface],
+  ["disc", ""],
+  ["@", `mailto:${links.email}`],
 ] as const;
 
 export default function Contact() {
   return (
     <Section id="contact" title="Contact" centered>
-      <div>
-        {social.map(([label, display, href]) => (
-          <div key={label}>
-            {href ? (
-              <a href={href} target={href.startsWith("mailto") ? undefined : "_blank"} rel="noopener">
-                {label}: {display}
-              </a>
-            ) : (
-              <span>{label}: {display}</span>
-            )}
-          </div>
-        ))}
+      <div className="max-w-prose mx-auto text-[1.05rem] leading-relaxed mb-10">
+        <p className="mb-4">This page has no grand purpose.</p>
+        <p className="mb-4">
+          <a href={`mailto:${links.email}`} className="!text-black no-underline border-b border-black">
+            You can write to me.
+          </a>
+        </p>
+        <p className="mb-4">That&apos;s pretty much it.</p>
+        <p className="mb-4">Unless you have something interesting to say.</p>
+        <p className="mb-6">In which case, please do.</p>
+        
+          href={`mailto:${links.email}`}
+          className="!text-black no-underline border-b border-black font-medium"
+        >
+          → drop a note
+        </a>
+      </div>
+
+      <div className="flex flex-row flex-wrap justify-center gap-4">
+        {social.map(([label, href]) =>
+          href ? (
+            
+              key={label}
+              href={href}
+              target={href.startsWith("mailto") ? undefined : "_blank"}
+              rel="noopener"
+              className="!text-black no-underline w-10 h-10 flex items-center justify-center border border-black rounded-full text-[0.8rem] hover:bg-black hover:!text-bg transition-colors"
+            >
+              {label}
+            </a>
+          ) : (
+            <span
+              key={label}
+              className="text-black w-10 h-10 flex items-center justify-center border border-black/30 rounded-full text-[0.8rem] opacity-40"
+              title="Discord: pranathi000"
+            >
+              {label}
+            </span>
+          )
+        )}
       </div>
     </Section>
   );
