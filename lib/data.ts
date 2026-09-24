@@ -193,12 +193,33 @@ export const discoveries: Discovery[] = [
 
 // Things I love: broader interests, no strict format required.
 // A loose, growable list — music, art, science, books, ideas, people.
-export type Loved = { emoji: string; label: string; note: string; link: string };
-export const thingsILove: Loved[] = [
-  { emoji: "🎨", label: "Art", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", link: "" },
-  { emoji: "🎵", label: "Music", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", link: "" },
-  { emoji: "🔬", label: "Science", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", link: "" },
-  { emoji: "📚", label: "Books", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", link: "" },
+export const lovedSong = {
+  artist: "Marvin Gaye",
+  title: "I Heard It Through the Grapevine",
+  note: "somehow this song feels like it knows something i don't.",
+  link: "",
+};
+
+export const lovedBooks = [
+  { title: "Notes from Underground", note: "still thinking about this one." },
+  { title: "The Myth of Sisyphus", note: "this one stayed with me." },
+];
+
+export const lovedArt = [
+  { note: "no explanation necessary." },
+  { note: "" },
+  { note: "" },
+  { note: "" },
+  { note: "" },
+];
+
+export const lovedRabbitHoles = [
+  { title: "JEPA", note: "went in curious. came out with 17 tabs open.", link: "" },
+  { title: "", note: "read this at 1am. bad decision. excellent paper.", link: "" },
+];
+
+export const lovedWriting = [
+  { title: "a Substack piece", note: "wrote this because apparently thinking about it wasn't enough.", link: "" },
 ];
 
 // AI Evolution: your own running, dated log of developments,
