@@ -22,7 +22,7 @@ export default function AboutRing() {
           Me
         </text>
         <text x={CENTER} y={CENTER + 18} textAnchor="middle" fontSize="12" fill="#6B4E8E">
-          currently thinking about
+          revolving my head around
         </text>
 
         {aboutNodes.map((node, i) => {
@@ -65,22 +65,22 @@ export default function AboutRing() {
         })}
       </svg>
 
-      <div className="w-full max-w-xs min-h-[180px] bg-white/50 rounded-2xl p-6 text-left">
-        {activeNode ? (
-          <>
-            <div className="text-lg font-semibold mb-3">{activeNode.label}</div>
-            <p className="text-[0.92rem] leading-relaxed mb-4">{activeNode.note}</p>
-            <div className="border-t border-rule pt-3">
-              <div className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-faint mb-2">Connected</div>
-              {activeNode.connections.map((ci) => (
-                <div key={ci} className="text-[0.85rem]">{aboutNodes[ci].label}</div>
-              ))}
-            </div>
-          </>
-        ) : (
-          <p className="text-faint text-[0.9rem] italic">Hover a point to see how it connects.</p>
-        )}
-      </div>
+      {activeNode ? (
+        <div className="w-full max-w-xs bg-white/50 rounded-2xl p-6 text-left">
+          <div className="text-lg font-semibold mb-3">{activeNode.label}</div>
+          <p className="text-[0.92rem] leading-relaxed mb-4">{activeNode.note}</p>
+          <div className="border-t border-rule pt-3">
+            <div className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-faint mb-2">Connected</div>
+            {activeNode.connections.map((ci) => (
+              <div key={ci} className="text-[0.85rem]">{aboutNodes[ci].label}</div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="hidden lg:flex w-full max-w-xs items-center justify-center">
+          <p className="text-faint text-[0.85rem] italic">hover a point</p>
+        </div>
+      )}
     </div>
   );
 }
