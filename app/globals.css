@@ -33,7 +33,7 @@ a:hover { opacity: 0.72; }
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  mix-blend-mode: multiply;     /* lets text/background show through instead of being covered */
+  mix-blend-mode: multiply;
   background: radial-gradient(
     circle at 30% 26%,
     #D6C2E0 0%,
@@ -61,7 +61,6 @@ a:hover { opacity: 0.72; }
   filter: blur(6px);
 }
 
-/* every orb sits in the outer margin; travel range stays within that margin */
 .orb.o1 { width: 220px; height: 220px; top: 6%;   left: -40px;  animation: edge1 24s ease-in-out infinite; }
 .orb.o2 { width: 90px;  height: 90px;  top: 62%;  left: 2%;     animation: edge2 18s ease-in-out infinite; }
 .orb.o3 { width: 140px; height: 140px; top: 18%;  right: -30px; animation: edge3 21s ease-in-out infinite, pulse 6s ease-in-out infinite; }
@@ -98,12 +97,6 @@ a:hover { opacity: 0.72; }
   50% { opacity: 0.25; }
 }
 
-@media (max-width: 900px) {
-  .orb { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .orb { animation: none; }
-}
 /* ── hopping packet with fading trail ─────────────────────────────── */
 .packet-track {
   position: fixed;
@@ -135,7 +128,6 @@ a:hover { opacity: 0.72; }
 .packet-trail.t2 { animation: hop-path 26s linear infinite, fade-trail 26s linear infinite; animation-delay: -0.3s, -0.3s; }
 .packet-trail.t3 { animation: hop-path 26s linear infinite, fade-trail 26s linear infinite; animation-delay: -0.45s, -0.45s; }
 
-/* travels left to right in a repeating arc — the "hop" comes from vertical bounce */
 @keyframes hop-path {
   0%   { left: -40px; top: 40px; }
   10%  { top: 0px; }
@@ -157,75 +149,6 @@ a:hover { opacity: 0.72; }
   100% { opacity: 0; }
 }
 
-@media (max-width: 900px) {
-  .packet-track { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .packet-node, .packet-trail { animation: none; opacity: 0; }
-}
-/* ── walking robot, replaces the section divider ─────────────────── */
-.robo-track {
-  position: relative;
-  width: 100%;
-  height: 44px;
-  margin-bottom: 24px;
-  overflow: hidden;
-}
-
-.robo-walker {
-  position: absolute;
-  left: -40px;
-  top: 4px;
-  animation: robo-walk 2.4s linear;
-  animation-fill-mode: forwards;
-  transform-origin: center bottom;
-}
-
-@keyframes robo-walk {
-  0%   { left: -40px; opacity: 0; }
-  8%   { opacity: 1; }
-  92%  { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-
-/* leg swing — the walk cycle */
-.robo-leg-l, .robo-leg-r {
-  transform-box: fill-box;
-  transform-origin: top center;
-}
-.robo-leg-l { animation: leg-swing-a 0.4s ease-in-out infinite; }
-.robo-leg-r { animation: leg-swing-b 0.4s ease-in-out infinite; }
-
-@keyframes leg-swing-a {
-  0%, 100% { transform: rotate(18deg); }
-  50% { transform: rotate(-18deg); }
-}
-@keyframes leg-swing-b {
-  0%, 100% { transform: rotate(-18deg); }
-  50% { transform: rotate(18deg); }
-}
-
-/* arms swing opposite to legs, like a real walk */
-.robo-arm-l, .robo-arm-r {
-  transform-box: fill-box;
-  transform-origin: top center;
-}
-.robo-arm-l { animation: leg-swing-b 0.4s ease-in-out infinite; }
-.robo-arm-r { animation: leg-swing-a 0.4s ease-in-out infinite; }
-
-/* gentle head/body bob while walking */
-.robo-walker { animation: robo-walk 2.4s linear, robo-bob 0.4s ease-in-out infinite; }
-
-@keyframes robo-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .robo-walker, .robo-leg-l, .robo-leg-r, .robo-arm-l, .robo-arm-r {
-    animation: none;
-  }
-}
 /* ── octopus, replaces the section divider ────────────────────────── */
 .octo-track {
   position: relative;
@@ -241,7 +164,6 @@ a:hover { opacity: 0.72; }
   animation: octo-drift 14s ease-in-out infinite;
 }
 
-/* travels left to right, then right to left, continuously and slowly */
 @keyframes octo-drift {
   0%   { left: 0%; transform: scaleX(1); }
   48%  { left: calc(100% - 46px); transform: scaleX(1); }
@@ -250,7 +172,6 @@ a:hover { opacity: 0.72; }
   100% { transform: scaleX(1); }
 }
 
-/* each tentacle waves independently, staggered, for a natural swim motion */
 .tentacle {
   transform-box: fill-box;
   transform-origin: top center;
@@ -267,6 +188,19 @@ a:hover { opacity: 0.72; }
   50% { transform: rotate(8deg); }
 }
 
+/* ── mobile: scale down instead of hiding ─────────────────────────── */
+@media (max-width: 900px) {
+  .orb { transform: scale(0.55); }
+  .octo-track { height: 36px; }
+  .octo-walker { transform: scale(0.7); }
+  .packet-track { transform: scale(0.6); }
+}
+
+/* ── reduced motion: turn everything off ──────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .octo-walker, .tentacle { animation: none; }
+  .orb,
+  .packet-node, .packet-trail,
+  .octo-walker, .tentacle {
+    animation: none;
+  }
 }
