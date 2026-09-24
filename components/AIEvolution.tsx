@@ -16,13 +16,14 @@ export default function AIEvolution() {
 
       <AIBrainMap />
 
-      <div className="max-w-prose mx-auto text-left mt-12 space-y-6">
+      <div className="max-w-prose mx-auto text-left mt-12 space-y-8">
         {allItems.map((item) => (
           <div key={item.title}>
             <a href={item.link} target="_blank" rel="noopener" className="font-medium">
               {item.title}
             </a>
-            <div className="font-mono text-[0.78rem] text-faint mt-1">{item.authors}</div>
+            <div className="font-mono text-[0.78rem] text-faint mt-1 mb-2">{item.authors}</div>
+            <p className="text-[0.92rem] leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
