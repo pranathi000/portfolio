@@ -108,3 +108,16 @@ export const aiEvolutionNodes: EvolutionNode[] = [
     ],
   },
 ];
+// About page ring nodes — your personal "currently thinking about" map.
+// angle is degrees around the circle (0 = top, clockwise). connections
+// are indices into this same array, drawn as arcs when a node is hovered.
+export type AboutNode = { label: string; note: string; angle: number; connections: number[] };
+export const aboutNodes: AboutNode[] = [
+  { label: "Inference", note: "Making trained models actually fast enough to use.", angle: 0, connections: [1, 5] },
+  { label: "CUDA", note: "Where the real performance work happens — kernels, memory, occupancy.", angle: 51, connections: [0, 2] },
+  { label: "Triton", note: "Writing fast GPU code without hand-rolling every kernel.", angle: 103, connections: [1, 3] },
+  { label: "Multimodal", note: "Vision, language, and everything in between sharing one space.", angle: 154, connections: [2, 4] },
+  { label: "Multilingual", note: "Telugu and Kannada evaluations reminded me how much gets lost across languages.", angle: 206, connections: [3, 5] },
+  { label: "Reasoning", note: "The part where a model has to actually think, not just predict.", angle: 257, connections: [4, 6] },
+  { label: "Metacognition", note: "Whether a model can notice its own uncertainty — the thing I keep circling back to.", angle: 309, connections: [5, 0] },
+];
