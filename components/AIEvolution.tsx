@@ -1,21 +1,31 @@
-import Section from "./Section";
-import { aiEvolution } from "@/lib/data";
+import { aiEvolutionNodes } from "@/lib/data";
+import AIBrainMap from "./AIBrainMap";
+
 export default function AIEvolution() {
+  const allItems = aiEvolutionNodes.flatMap((n) => n.items.filter((i) => i.link));
+
   return (
-    <Section
-      id="ai-evolution"
-      title="AI evolution"
-      sub="A running, dated record of developments in AI that I find significant — not a news feed, just my own observations as they happen."
-      centered
-    >
-      <div>
-        {aiEvolution.map((m) => (
-          <div key={m.date + m.text} className="mb-5 last:mb-0">
-            <div className="font-mono text-[0.78rem] text-faint mb-1">{m.date}</div>
-            <p className="max-w-prose mx-auto">{m.text}</p>
+    <section id="ai-evolution" className="py-16 text-center">
+      <h2 className="font-hand script-bold text-5xl md:text-6xl text-lilac mb-4">
+        a timeline of ideas
+      </h2>
+      <p className="max-w-prose mx-auto mb-10">
+        Some of the papers, models, and milestones that shaped how I think about AI. Not a
+        complete history &mdash; just the ones that keep coming back to me.
+      </p>
+
+      <AIBrainMap />
+
+      <div className="max-w-prose mx-auto text-left mt-12 space-y-6">
+        {allItems.map((item) => (
+          <div key={item.title}>
+            <a href={item.link} target="_blank" rel="noopener" className="font-medium">
+              {item.title}
+            </a>
+            <div className="font-mono text-[0.78rem] text-faint mt-1">{item.authors}</div>
           </div>
         ))}
       </div>
-    </Section>
+    </section>
   );
 }
