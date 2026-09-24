@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <main className="w-full pl-5">
+    <main className="px-5 md:pl-5 md:pr-0">
       <Header />
       <CurrentWork />
       <Research />
