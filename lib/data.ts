@@ -177,17 +177,6 @@ export const discoveries: Discovery[] = [
   },
 ];
 
-export const lovedSong = {
-  artist: "Marvin Gaye",
-  title: "I Heard It Through the Grapevine",
-  note: "somehow this song feels like it knows something i don't.",
-  link: "",
-};
-
-export const lovedBooks = [
-  { title: "Notes from Underground", note: "still thinking about this one." },
-  { title: "The Myth of Sisyphus", note: "this one stayed with me." },
-];
 
 export const lovedArt = [
   { note: "no explanation necessary." },
@@ -338,11 +327,13 @@ export const lovedSong = {
   artist: "Marvin Gaye",
   title: "I Heard It Through the Grapevine",
   note: "somehow this song feels like it knows something i don't.",
-  link: "https://open.spotify.com/track/...",
-  cover: "https://your-image-url.../grapevine.jpg",
+  link: "",
+  cover: "",
 };
 
+export type LovedBook = { title: string; note: string; amazon: string; cover: string };
 export const lovedBooks: LovedBook[] = [
-  { title: "Notes from Underground", note: "still thinking about this one.", amazon: "https://amazon.com/...", cover: "https://your-image-url.../notes.jpg" },
-  ...
+  { title: "Notes from Underground", note: "still thinking about this one.", amazon: "", cover: "" },
+  { title: "The Myth of Sisyphus", note: "this one stayed with me.", amazon: "", cover: "" },
 ];
+
