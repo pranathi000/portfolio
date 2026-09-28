@@ -1,5 +1,5 @@
 import Section from "./Section";
-import { lovedSong, lovedBooks, lovedRabbitHoles } from "@/lib/data";
+import { lovedSong, lovedBooks, lovedRabbitHoles, lovedWriting } from "@/lib/data";
 
 export default function ThingsILove() {
   return (
@@ -87,6 +87,19 @@ export default function ThingsILove() {
               {r.title && <div className="font-medium">{r.title}</div>}
               <p className="mt-1 text-[0.92rem]">{r.note}</p>
               {r.link && <a href={r.link} target="_blank" rel="noopener" className="inline-block mt-1">[ paper → ]</a>}
+            </div>
+          ))}
+        </div>
+
+        <hr className="border-rule" />
+
+        <div>
+          <div className="font-mono text-sm text-faint mb-3">things i couldn&apos;t stop thinking about</div>
+          {lovedWriting.map((w, i) => (
+            <div key={i} className="mb-4 last:mb-0">
+              {w.title && <div className="font-medium">{w.title}</div>}
+              <p className="mt-1 text-[0.92rem]">{w.note}</p>
+              {w.link && <a href={w.link} target="_blank" rel="noopener" className="inline-block mt-1">[ read → ]</a>}
             </div>
           ))}
         </div>
