@@ -3,7 +3,6 @@ import CurrentWork from "@/components/CurrentWork";
 import Articles from "@/components/Articles";
 import Research from "@/components/Research";
 import Projects from "@/components/Projects";
-import Discoveries from "@/components/Discoveries";
 import ThingsILove from "@/components/ThingsILove";
 import AIEvolution from "@/components/AIEvolution";
 import About from "@/components/About";
@@ -18,7 +17,6 @@ export default function Page() {
       <Research />
       <Articles />
       <Projects />
-      <Discoveries />
       <ThingsILove />
       <AIEvolution />
       <About />
