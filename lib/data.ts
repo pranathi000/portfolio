@@ -320,8 +320,8 @@ export const lovedBooks: LovedBook[] = [
   { title: "The Myth of Sisyphus", note: "this one stayed with me.", link: "https://www.goodreads.com/en/book/show/91950.The_Myth_of_Sisyphus", cover: "/myth_of_sisyphus.jpg" },
 ];
 export const lovedRabbitHoles = [
-  { title: "JEPA", note: "went in curious. came out with 17 tabs open.", link: "" },
-  { title: "", note: "read this at 1am. bad decision. excellent paper.", link: "" },
+  { title: "JEPA", note: "went in curious. came out with 17 tabs open.", link: "https://arxiv.org/abs/2606.27014" },
+  { title: "LLM Inference", note: "read this at 1am. bad decision. excellent paper.", link: "https://arxiv.org/abs/2505.01658" },
 ];
 
 export const lovedWriting = [
