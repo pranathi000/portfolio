@@ -319,6 +319,9 @@ export const lovedSong = {
   link: "https://youtu.be/cXWHpbpNdHE?si=eZomQ2AzOzMMgGli",
   cover: "/marvin_gaye.jpeg",
 };
+export const lovedWriting = {
+   title: "a Substack piece", note: "wrote this because apparently thinking about it wasn't enough. Take a JumpIn to my SUBSTACK! Life theories, psychology and what not!!", link: "https://substack.com/@curious0" ,
+  };
 
 export type LovedBook = { title: string; note: string; link: string; cover: string };
 export const lovedBooks: LovedBook[] = [
