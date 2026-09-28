@@ -6,6 +6,8 @@ export const site = {
   description:
     "Independent Researcher",
   quote: "Interested in how things actually work!",
+  GoogleScholar: "https://scholar.google.com/citations?user=nAnQ6QoAAAAJ&hl=en&oi=ao",
+  
 };
 
 export const links = {
