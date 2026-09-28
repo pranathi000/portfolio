@@ -175,14 +175,7 @@ export const lovedArt = [
   { note: "" },
 ];
 
-export const lovedRabbitHoles = [
-  { title: "JEPA", note: "read this at 1AM. bad decision :|  excellent paper :))", link: "https://arxiv.org/abs/2606.27014" },
-  { title: "", note: "went in curious. came out with 17 tabs open. ", link: "https://arxiv.org/abs/2505.01658" },
-];
 
-export const lovedWriting = [
-  { title: "a Substack piece", note: "wrote this because apparently thinking about it wasn't enough. Check out my substack! Life theories, psychology and what not!!", link: "https://substack.com/@curious0" },
-];
 
 export type EvolutionItem = { title: string; authors: string; desc: string; link: string };
 export type EvolutionNode = { label: string; angle: number; items: EvolutionItem[] };
@@ -325,5 +318,17 @@ export type LovedBook = { title: string; note: string; link: string; cover: stri
 export const lovedBooks: LovedBook[] = [
   { title: "Notes from Underground", note: "still thinking about this one.", link: "https://www.goodreads.com/en/book/show/49455.Notes_from_Underground", cover: "/notes_from_underground.jpeg" },
   { title: "The Myth of Sisyphus", note: "this one stayed with me.", link: "https://www.goodreads.com/en/book/show/91950.The_Myth_of_Sisyphus", cover: "/myth_of_sisyphus.jpg" },
+];
+export const lovedRabbitHoles = [
+  { title: "JEPA", note: "went in curious. came out with 17 tabs open.", link: "" },
+  { title: "", note: "read this at 1am. bad decision. excellent paper.", link: "" },
+];
+
+export const lovedWriting = [
+  {
+    title: "a Substack piece",
+    note: "wrote this because apparently thinking about it wasn't enough. Check out my substack! Life theories, psychology and what not!!",
+    link: "https://substack.com/@curious0",
+  },
 ];
 
