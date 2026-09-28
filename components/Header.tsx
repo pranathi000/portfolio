@@ -19,7 +19,6 @@ export default function Header() {
         <a href="#articles">Articles</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
-        <a href="#discoveries">Discoveries</a>
         <a href="#love">Things I love</a>
         <a href="#ai-evolution">AI evolution</a>
         <a href="#about">About</a>
