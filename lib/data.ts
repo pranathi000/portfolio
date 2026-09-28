@@ -334,3 +334,15 @@ export const certifications = [
   "AI Fundamentals: IBM SkillsBuild",
   "Intro to Programming: Kaggle",
 ];
+export const lovedSong = {
+  artist: "Marvin Gaye",
+  title: "I Heard It Through the Grapevine",
+  note: "somehow this song feels like it knows something i don't.",
+  link: "https://open.spotify.com/track/...",
+  cover: "https://your-image-url.../grapevine.jpg",
+};
+
+export const lovedBooks: LovedBook[] = [
+  { title: "Notes from Underground", note: "still thinking about this one.", amazon: "https://amazon.com/...", cover: "https://your-image-url.../notes.jpg" },
+  ...
+];
