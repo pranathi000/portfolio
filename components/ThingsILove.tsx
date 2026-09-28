@@ -44,14 +44,14 @@ export default function ThingsILove() {
 
         <hr className="border-rule" />
 
-        {/* BOOKS — square posters, click through to Amazon */}
+        {/* BOOKS — square posters, click through to the book's link */}
         <div>
           <div className="font-mono text-sm text-faint mb-3">books that wouldn&apos;t leave me alone</div>
           <div className="flex flex-wrap gap-8">
             {lovedBooks.map((b) => (
               <div key={b.title} className="w-32">
-                {b.amazon ? (
-                  <a href={b.amazon} target="_blank" rel="noopener" className="block">
+                {b.link ? (
+                  <a href={b.link} target="_blank" rel="noopener" className="block">
                     <div className="w-32 h-32 border border-black rounded overflow-hidden flex items-center justify-center text-3xl bg-black/5 hover:opacity-80 transition-opacity">
                       {b.cover ? (
                         // eslint-disable-next-line @next/next/no-img-element
