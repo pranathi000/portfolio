@@ -1,56 +1,53 @@
-// ─────────────────────────────────────────────────────────────────────────
-// This file is the whole content of the site. Every section on the
-// homepage reads from one of the arrays below. To add something new,
-// add one object to the matching array — no component changes needed.
-// Leave a link as "" (empty string) as a placeholder until you have it.
-// ─────────────────────────────────────────────────────────────────────────
+// Everything on the homepage reads from this file.
+// To add something, add one object to the matching array.
+// Leave a link as "" until you have it.
 
 export type Article = { emoji: string; title: string; date: string; preview: string; pdf: string };
 export const articles: Article[] = [
   {
     emoji: "🧠",
     title: "Understanding PPO Better: The Intuition Behind Policy, Value, and Reward",
-    date: "2026-07-01",
+    date: "01-07-2026",
     preview:
       "PPO became much easier to understand once I stopped treating its policy, value network, and reward model as isolated pieces. This article walks through how they interact, using a simple four-color example to build the intuition behind advantage, updates, and PPO's clipping mechanism.",
     pdf: "",
   },
   {
-    emoji: "⚙️",
+    emoji: "🧠",
     title: "The Adam Optimizer Finally Made Sense!",
-    date: "2026-06-30",
+    date: "30-06-2026",
     preview:
       "Breaking down Adam beyond the equations - understanding how momentum, adaptive learning rates, and gradient updates work together, and why the optimizer behaves the way it does in practice.",
     pdf: "",
   },
   {
-    emoji: "🖥️",
+    emoji: "🧠",
     title: "Understanding CUDA Register Pressure Through a Series of Failed Experiments",
-    date: "2026-04-25",
+    date: "25-04-2026",
     preview:
       "Trying to understand CUDA register pressure by breaking things first - exploring how register usage affects occupancy and performance, and what the failed experiments revealed along the way.",
     pdf: "",
   },
   {
-    emoji: "🖥️",
+    emoji: "🧠",
     title: "Understanding CUDA Register Spilling: From Kernel Experiments to Hopper and Blackwell Architectures",
-    date: "2026-04-27",
+    date: "27-04-2026",
     preview:
       "Wrote it to answer every question that naturally appears when trying to understand CUDA register spilling from the ground up. Not just what spilling is, but when it appears, how modern kernels manage it, and why it still matters even on recent GPU architectures like Hopper and Blackwell.",
     pdf: "",
   },
   {
-    emoji: "🖥️",
+    emoji: "🧠",
     title: "Naive GEMM Is Not the First CUDA Kernel You Optimize",
-    date: "2026-04-27",
+    date: "27-04-2026",
     preview:
       "A practical look at why optimizing a CUDA kernel starts with understanding the computation and its bottlenecks - using GEMM to explore memory access, tiling, and the decisions that actually matter for GPU performance.",
     pdf: "",
   },
   {
-    emoji: "🖥️",
+    emoji: "🧠",
     title: "CUDA Programming: What Happens When You Give Your Computer 10,000 Workers Instead of 4",
-    date: "2025-08-02",
+    date: "02-08-2025",
     preview:
       "An introduction to CUDA's parallel execution model, exploring how threads, blocks, and warps work together to enable massively parallel computation on GPUs.",
     pdf: "",
@@ -61,14 +58,14 @@ export type Work = { emoji: string; title: string; tag: string; desc: string; li
 export const research: Work[] = [
   {
     emoji: "📄",
-    title: "FedPAE — A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
+    title: "FedPAE: A Privacy-Preserving Federated Personalized Autoencoder Framework for Distributed Cloud Systems",
     tag: "ICTIS 2026 · Published",
     desc: "A federated personalized autoencoder for distributed cloud systems, achieving higher anomaly-detection performance than FedAvg and FedProx baselines without centralizing client data.",
     link: "",
   },
   {
     emoji: "📄",
-    title: "MAD-EBA — A Detector-Agnostic Behavioral Anomaly Detection Framework for Smart Cloud Systems",
+    title: "MAD-EBA: A Detector-Agnostic Behavioral Anomaly Detection Framework for Smart Cloud Systems",
     tag: "Poster · Accepted",
     desc: "A detector-agnostic framework for behavioral anomaly detection, evaluated across Isolation Forest and autoencoder-based models over thousands of entity-period profiles.",
     link: "",
@@ -79,41 +76,41 @@ export const projects: Work[] = [
   {
     emoji: "🧪",
     title: "Mini-STARK: A Stateful Environment for Evaluating AI Agents",
-    tag: "LangGraph · Python · May 2026 – Present",
+    tag: "LangGraph · Python · May 2026 to Present",
     desc: "Built a 3-layer verification system to catch agent failures invisible to output-level checks, discovering environment state and conversational memory are architecturally separate systems.",
-    link: "",
+    link: "https://github.com/pranathi000/RLHF/tree/main/MINI-STARK",
   },
   {
     emoji: "📊",
     title: "Targeted SFT and Data Quality Study on Dolly 15K",
-    tag: "PyTorch · HuggingFace Transformers · GPT-2 · Mar 2026 – May 2026",
+    tag: "PyTorch · HuggingFace Transformers · GPT-2 · Mar 2026 to May 2026",
     desc: "Ran 8 controlled experiments improving instruction-following from 0% to 75%, proving SFT only improves what it's trained on and that 15% corrupted data collapses task-specific accuracy to 0%.",
     link: "",
   },
   {
     emoji: "🎯",
     title: "Complete RLHF Pipeline: SFT, Reward Modeling, GRPO and DPO on UltraFeedback",
-    tag: "PyTorch · HuggingFace TRL · GPT-2 · Feb 2026 – Apr 2026",
+    tag: "PyTorch · HuggingFace TRL · GPT-2 · Feb 2026 to Apr 2026",
     desc: "Trained a reward model from scratch on 35K preference pairs achieving 56.5% accuracy and ran GRPO/DPO, finding that removing KL penalty destabilizes training rather than just causing reward hacking.",
     link: "",
   },
   {
     emoji: "🖥️",
-    title: "End-to-End Transformer Attention Inference — Cross-Layer CUDA Study",
+    title: "End-to-End Transformer Attention Inference: Cross-Layer CUDA Study",
     tag: "CUDA · Triton · CUTLASS",
     desc: "A cross-implementation study of attention kernels, comparing shared-memory tiling and warp-level tuning against reference libraries.",
     link: "",
   },
   {
     emoji: "🖥️",
-    title: "Minimal Transformer Inference Engine — KV-Cache, Continuous Batching, Streaming",
+    title: "Minimal Transformer Inference Engine: KV-Cache, Continuous Batching, Streaming",
     tag: "CUDA · PyTorch",
     desc: "A from-scratch serving engine with KV-cache reuse and a continuous-batching scheduler, with streaming token output.",
     link: "",
   },
   {
     emoji: "🖥️",
-    title: "Memory-Efficient Long-Context Attention — Paged KV-Cache + IO-Aware FlashAttention",
+    title: "Memory-Efficient Long-Context Attention: Paged KV-Cache + IO-Aware FlashAttention",
     tag: "CUDA · FlashAttention",
     desc: "FlashAttention-style tiled attention with paged KV-cache allocation, scaling inference to very long sequences.",
     link: "",
@@ -127,7 +124,7 @@ export const projects: Work[] = [
   },
   {
     emoji: "🌅",
-    title: "3D Graphics Engine — Ray Tracing",
+    title: "3D Graphics Engine: Ray Tracing",
     tag: "Graphics",
     desc: "Shading, anti-aliasing, super-sampling, and real-time rendering, written from scratch.",
     link: "",
@@ -138,16 +135,16 @@ export type CurrentWorkItem = { emoji: string; title: string; period: string; de
 export const currentWork: CurrentWorkItem[] = [
   {
     emoji: "🌍",
-    title: "Aya Expedition — Multicultural Riddles Benchmark, Cohere Labs",
-    period: "July – August 2026",
-    desc: "Contributed to Telugu human evaluations, and contributed to and coordinated Kannada human evaluations, for MultiCulturalRiddle: A Multicultural Benchmark of Riddles — a benchmark of culturally-grounded riddles spanning 61 cultures and 51 languages, evaluated on 24 LLMs.",
+    title: "Aya Expedition: Multicultural Riddles Benchmark",
+    period: "Cohere Labs · July to August 2026",
+    desc: "Explored how language models handle culturally grounded riddles through human evaluation. Contributed Telugu evaluations and helped coordinate the Kannada evaluation effort across a benchmark spanning 61 cultures and 51 languages.",
     link: "https://openreview.net/forum?id=sjdqmzc5B5",
   },
   {
     emoji: "🧩",
-    title: "Co-Lead, Multimodal Group — Cohere Labs Open Science Community",
-    period: "September 2026 – Present",
-    desc: "Helping run reading groups, organize research discussions, and coordinate multimodal research projects within the community.",
+    title: "Multimodal Group",
+    period: "Cohere Labs Open Science Community · September 2026 to Present",
+    desc: "Helping shape the community's multimodal research space through reading groups, research discussions, paper sessions, and collaborative projects around multimodal AI.",
     link: "https://labscommunity.cohere.com/community-programs/multimodal",
   },
 ];
@@ -160,7 +157,7 @@ export const discoveries: Discovery[] = [
     title: "Lorem ipsum dolor sit amet, consectetur",
     desc: "Short description of why I like or recommend it.",
     link: "",
-    date: "2026-08-10",
+    date: "10-08-2026",
   },
   {
     emoji: "📖",
@@ -168,7 +165,7 @@ export const discoveries: Discovery[] = [
     title: "Ut enim ad minim veniam quis nostrud",
     desc: "Short description of why I like or recommend it.",
     link: "",
-    date: "2026-06-28",
+    date: "28-06-2026",
   },
   {
     emoji: "🌐",
@@ -176,7 +173,7 @@ export const discoveries: Discovery[] = [
     title: "Duis aute irure dolor in reprehenderit",
     desc: "Short description of why I like or recommend it.",
     link: "",
-    date: "2026-04-14",
+    date: "14-04-2026",
   },
 ];
 
@@ -242,7 +239,7 @@ export const aiEvolutionNodes: EvolutionNode[] = [
     items: [
       {
         title: "MultiCulturalRiddle: A Multicultural Benchmark of Riddles",
-        authors: "MRL Workshop, 2026",
+        authors: "Submitted to MRL 2026",
         desc: "A benchmark of culturally grounded riddles across 61 cultures and 51 languages. I contributed Telugu and Kannada human evaluations to this one.",
         link: "https://openreview.net/forum?id=sjdqmzc5B5",
       },
@@ -254,8 +251,8 @@ export const aiEvolutionNodes: EvolutionNode[] = [
     items: [
       {
         title: "Project Astra",
-        authors: "Google DeepMind, 2024–2025",
-        desc: "A research prototype for a universal AI assistant that sees, hears, remembers, and takes actions across apps in real time, natively multimodal rather than stitched together from separate models.",
+        authors: "Google DeepMind, 2024 to 2025",
+        desc: "A research prototype for a universal AI assistant: video understanding, screen sharing, memory, and computer control, with parts of it moving into Gemini Live.",
         link: "https://deepmind.google/models/project-astra/",
       },
       {
@@ -319,21 +316,21 @@ export const aiEvolutionNodes: EvolutionNode[] = [
 export type AboutNode = { label: string; note: string; angle: number; connections: number[] };
 export const aboutNodes: AboutNode[] = [
   { label: "Inference", note: "Making trained models actually fast enough to use.", angle: 0, connections: [1, 5] },
-  { label: "CUDA", note: "Where the real performance work happens — kernels, memory, occupancy.", angle: 51, connections: [0, 2] },
+  { label: "CUDA", note: "Where the real performance work happens: kernels, memory, occupancy.", angle: 51, connections: [0, 2] },
   { label: "Triton", note: "Writing fast GPU code without hand-rolling every kernel.", angle: 103, connections: [1, 3] },
   { label: "Multimodal", note: "Vision, language, and everything in between sharing one space.", angle: 154, connections: [2, 4] },
   { label: "Multilingual", note: "Telugu and Kannada evaluations reminded me how much gets lost across languages.", angle: 206, connections: [3, 5] },
   { label: "Reasoning", note: "The part where a model has to actually think, not just predict.", angle: 257, connections: [4, 6] },
-  { label: "Metacognition", note: "Whether a model can notice its own uncertainty — the thing I keep circling back to.", angle: 309, connections: [5, 0] },
+  { label: "Metacognition", note: "Whether a model can notice its own uncertainty. The thing I keep circling back to.", angle: 309, connections: [5, 0] },
 ];
 
 export const education = [
-  { school: "Rajiv Gandhi University of Knowledge & Technologies", detail: "B.Tech, Electronics & Communication · CGPA 8.3", period: "2022 — Present" },
-  { school: "Pre-University Course", detail: "GPA 9.57", period: "2020 — 2022" },
+  { school: "Rajiv Gandhi University of Knowledge & Technologies", detail: "B.Tech, Electronics & Communication · CGPA 8.3", period: "2022 to Present" },
+  { school: "Pre-University Course", detail: "GPA 9.57", period: "2020 to 2022" },
 ];
 export const certifications = [
-  "Machine Learning Specialization — DeepLearning.AI & Stanford Online",
-  "Top 5% — Industrial IoT (IIoT), NPTEL 2025",
-  "AI Fundamentals — IBM SkillsBuild",
-  "Intro to Programming — Kaggle",
+  "Machine Learning Specialization: DeepLearning.AI & Stanford Online",
+  "Top 5%, Industrial IoT (IIoT), NPTEL 2025",
+  "AI Fundamentals: IBM SkillsBuild",
+  "Intro to Programming: Kaggle",
 ];
