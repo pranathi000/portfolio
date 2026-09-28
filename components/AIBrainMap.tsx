@@ -82,6 +82,8 @@ export default function AIBrainMap() {
         const isActive = active === i;
         const labelX = pos.side === "right" ? pos.x + 90 : pos.x - 90;
         const labelY = pos.y;
+        // keyword label links straight to the first item's paper/resource
+        const href = node.items.find((it) => it.link)?.link;
         return (
           <g key={node.label} onMouseEnter={() => setActive(i)} onMouseLeave={() => setActive(null)} className="cursor-pointer">
             <path
@@ -93,19 +95,38 @@ export default function AIBrainMap() {
               opacity={isActive ? 0.9 : 0.5}
             />
             <circle cx={pos.x} cy={pos.y} r={isActive ? 6.5 : 4.5} fill={isActive ? "#5B3E8E" : "#9B6BA8"} style={{ transition: "r 0.2s, fill 0.2s" }} />
-            <text
-              x={labelX}
-              y={labelY}
-              textAnchor={pos.side === "right" ? "start" : "end"}
-              dx={pos.side === "right" ? 6 : -6}
-              dy="4"
-              fontSize="13"
-              fontWeight={isActive ? 600 : 400}
-              fill={isActive ? "#2E1F4D" : "#4a4453"}
-              style={{ transition: "font-weight 0.2s" }}
-            >
-              {node.label}
-            </text>
+            {href ? (
+              <a href={href} target="_blank" rel="noopener">
+                <text
+                  x={labelX}
+                  y={labelY}
+                  textAnchor={pos.side === "right" ? "start" : "end"}
+                  dx={pos.side === "right" ? 6 : -6}
+                  dy="4"
+                  fontSize="13"
+                  fontWeight={isActive ? 600 : 400}
+                  fill={isActive ? "#2E1F4D" : "#4a4453"}
+                  textDecoration={isActive ? "underline" : "none"}
+                  style={{ transition: "font-weight 0.2s" }}
+                >
+                  {node.label}
+                </text>
+              </a>
+            ) : (
+              <text
+                x={labelX}
+                y={labelY}
+                textAnchor={pos.side === "right" ? "start" : "end"}
+                dx={pos.side === "right" ? 6 : -6}
+                dy="4"
+                fontSize="13"
+                fontWeight={isActive ? 600 : 400}
+                fill={isActive ? "#2E1F4D" : "#4a4453"}
+                style={{ transition: "font-weight 0.2s" }}
+              >
+                {node.label}
+              </text>
+            )}
           </g>
         );
       })}
