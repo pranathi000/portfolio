@@ -1,12 +1,12 @@
 import Section from "./Section";
-import { lovedSong, lovedBooks, lovedArt, lovedRabbitHoles, lovedWriting } from "@/lib/data";
+import { lovedSong, lovedBooks, lovedRabbitHoles } from "@/lib/data";
 
 export default function ThingsILove() {
   return (
     <Section
       id="love"
       title="things i have a soft spot for"
-      sub="some things i like. some things i don't understand. some things i keep coming back to anyway."
+      sub="a few things i keep coming back to."
       centered
     >
       <div className="max-w-prose mx-auto text-left space-y-14">
@@ -34,31 +34,12 @@ export default function ThingsILove() {
         <hr className="border-rule" />
 
         <div>
-          <div className="font-mono text-sm text-faint mb-3">things i don&apos;t completely understand</div>
-          <p className="text-[0.92rem]">no explanation necessary.</p>
-        </div>
-
-        <hr className="border-rule" />
-
-        <div>
           <div className="font-mono text-sm text-faint mb-3">rabbit holes i willingly walked into</div>
           {lovedRabbitHoles.map((r, i) => (
             <div key={i} className="mb-4 last:mb-0">
               {r.title && <div className="font-medium">{r.title}</div>}
               <p className="mt-1 text-[0.92rem]">{r.note}</p>
               {r.link && <a href={r.link} target="_blank" rel="noopener" className="inline-block mt-1">[ paper → ]</a>}
-            </div>
-          ))}
-        </div>
-
-        <hr className="border-rule" />
-
-        <div>
-          <div className="font-mono text-sm text-faint mb-3">things i couldn&apos;t stop thinking about</div>
-          {lovedWriting.map((w, i) => (
-            <div key={i}>
-              <p className="text-[0.92rem]">{w.note}</p>
-              {w.link && <a href={w.link} target="_blank" rel="noopener" className="inline-block mt-1">[ {w.title} → ]</a>}
             </div>
           ))}
         </div>
