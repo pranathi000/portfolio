@@ -1,9 +1,18 @@
 import Section from "./Section";
 import { research } from "@/lib/data";
+import { links } from "@/lib/site";
 
 export default function Research() {
   return (
     <Section id="research" title="Research" centered>
+      <p className="mb-8 max-w-prose mx-auto text-[0.98rem]">
+        Check out more of my research on{" "}
+        <a href={links.GoogleScholar} target="_blank" rel="noopener">
+          Google Scholar
+        </a>
+        .
+        My recent work on Multicultural Riddle Benchmarking was accepted to MRL 2026, under the EMNLP conference.
+      </p>
       <div className="flex flex-wrap justify-center gap-8">
         {research.map((w) => (
           <div key={w.title} className="w-36 text-center">
